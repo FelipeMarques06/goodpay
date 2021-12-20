@@ -40,7 +40,7 @@
                         <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
                       </svg>
                     </span>
-                    <input type="email" id="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    <input type="text" id="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                   </div>
                   <div class="input-group input-group-lg campoLogin">
                     <span class="input-group-text" id="inputGroup-sizing-lg">
@@ -51,8 +51,8 @@
                     <input type="password" id="senha" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <button class="btn btn-primary me-md-2" type="button">Entre no App</button>
-                    <button class="btn btn-primary" type="button">Novo Usuário</button>
+                    <button id="btnEntrar" class="btn btn-primary me-md-2" type="button">Entre no App</button>
+                    <button id="btnNovoUser" class="btn btn-primary" type="button">Novo Usuário</button>
                   </div>
                 </div>
               </div>
@@ -153,6 +153,24 @@
       
     </div>
   </main>
+  <!-- Modal -->
+  <div id="modal1" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="titleModal" class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="bodyModal" class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <footer>
   <script type="module" src="src/index.js"></script>
