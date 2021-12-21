@@ -1,18 +1,21 @@
 import controlerUserLogin from "./moduloInterface.js";
 
-var modalLogin = new bootstrap.Modal(document.getElementById('modal1'))
+// Trazendo elementos do Bootstrap para uso da main Javascript
+var myModal = new bootstrap.Modal(document.getElementById('myModal'))
 
+// Trazendo os botões do DOM em HTML
 const entrarUsuario = document.getElementById("btnEntrar");
 entrarUsuario.addEventListener("click", (event)=>{
-    let nome = document.getElementById("usuario").value,
+    let user = document.getElementById("usuario").value,
         senha = document.getElementById("senha").value;
-    if(!nome || nome === null || nome ==="" || !senha || senha === null || senha ===""){
-        document.getElementById("titleModal").innerHTML = "Campos Vazios";
-        document.getElementById("bodyModal").innerHTML = "Um ou mais campos estão vaziosw"
-        modalLogin.show();
-        alert("Campos Vazios, não há como executar o login");
-    } else {
-        controlerUserLogin.loginInfo(nome, senha);
-    }
+    let alertModal = controlerUserLogin.loginInfo(user, senha);
 
-})
+    // Inserindo as informações no Modal
+  document.getElementById('titleModal').innerHTML = alertModal.title
+  document.getElementById('bodyModal').innerHTML = alertModal.bodyModal
+  document.getElementById('btnModalClose').innerHTML = alertModal.b1
+  document.getElementById('btnModalSave').innerHTML = alertModal.b2
+
+  myModal.show()
+
+})  
